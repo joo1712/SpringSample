@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/error")
@@ -15,12 +16,11 @@ public class ErrorController {
 	private static Logger logger = LoggerFactory.getLogger(ErrorController.class);
 	
 	@RequestMapping("/error404")
-	public String Error404(HttpServletRequest req, Model model) {
+	public ModelAndView Error404(HttpServletRequest req) {
 		logger.info("======================================================");
 		logger.info("URI :" + req.getRequestURI());
 		logger.info("======================================================");
-		model.addAttribute("code", "ERROR_404");
-		return "jspviews/error/404";
+		return new ModelAndView("/jspviews/error/404");
 	}
 	
 	@RequestMapping("/error500")

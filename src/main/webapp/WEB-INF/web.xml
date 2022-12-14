@@ -49,12 +49,31 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/</url-pattern>
     </filter-mapping>
+    
+    <!-- Spring Security Filter -->
+	<filter>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<context-param>
+	  <param-name>contextConfigLocation</param-name>
+	  <param-value>
+	  		/WEB-INF/spring/root-context.xml
+	  		/WEB-INF/spring/spring-security.xml
+	  </param-value>
+	</context-param>
+	
 	<!-- filter Setting E-->
 	
 	<!-- Error page Setting S-->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/error404</location>
+		<location>/error/error404</location>
 	</error-page>
 	
 	<error-page>
@@ -63,7 +82,11 @@
 	</error-page>
 	<!-- Error page Setting E-->
 	
+
+	
 	<welcome-file-list>
 		<welcome-file>jspviews/index.jsp</welcome-file>
 	</welcome-file-list>
+	
+
 </web-app>
