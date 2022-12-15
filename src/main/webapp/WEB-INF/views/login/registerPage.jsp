@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}/resources" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +16,13 @@
     <title>SB Admin 2 - Register</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="${path}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="${path}/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -61,7 +65,7 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <a href="/user/loginPage" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a>
                                 <hr>
@@ -88,14 +92,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="${path}/vendor/jquery/jquery.min.js"></script>
+    <script src="${path}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="${path}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="${path}/js/sb-admin-2.min.js"></script>
 
 </body>
 
