@@ -41,8 +41,8 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <!-- form 속성 추가 12.14 -->
-                                    <form class="user" action="${path}/user/login-processing" method="post">
+                                    <!-- form 속성 추가 12.15 -->
+                                    <form class="user" action="/login" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" name="password" placeholder="Password">
+                                                id="exampleInputPassword" name="userPw" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

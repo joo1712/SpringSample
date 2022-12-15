@@ -20,7 +20,7 @@ public class ErrorController {
 		logger.info("======================================================");
 		logger.info("URI :" + req.getRequestURI());
 		logger.info("======================================================");
-		return new ModelAndView("/jspviews/error/404");
+		return new ModelAndView("/error/404");
 	}
 	
 	@RequestMapping("/error500")

@@ -22,7 +22,6 @@ public class RootController {
 		logger.info("===============================================");
 		logger.info("URI :" + req.getRequestURI());
 		logger.info("===============================================");
-		return new ModelAndView("jspviews/index");
+		return new ModelAndView("index");
 	}
-
 }

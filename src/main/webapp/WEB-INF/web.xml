@@ -64,7 +64,7 @@
 	  <param-name>contextConfigLocation</param-name>
 	  <param-value>
 	  		/WEB-INF/spring/root-context.xml
-	  		/WEB-INF/spring/spring-security.xml
+	  		/WEB-INF/spring/context-security.xml
 	  </param-value>
 	</context-param>
 	
@@ -82,10 +82,8 @@
 	</error-page>
 	<!-- Error page Setting E-->
 	
-
-	
 	<welcome-file-list>
-		<welcome-file>jspviews/index.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 
