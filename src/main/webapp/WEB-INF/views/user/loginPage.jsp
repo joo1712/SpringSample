@@ -23,7 +23,8 @@
 </head>
 
 <body class="bg-gradient-primary">
-
+	<h2><c:out value="${error}" /></h2>
+	<h2><c:out value="${logout}" /></h2>
     <div class="container">
 
         <!-- Outer Row -->

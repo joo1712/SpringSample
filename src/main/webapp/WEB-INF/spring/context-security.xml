@@ -6,12 +6,18 @@
                                  http://www.springframework.org/schema/beans/spring-beans.xsd
                                  http://www.springframework.org/schema/security
                                  http://www.springframework.org/schema/security/spring-security.xsd">
+                                 
+                                 
+        <beans:bean id="accessDeniedHandler" class="kr.ex.co.sample.security.AccessDeniedHandler" />
         
         <http auto-config="true" use-expressions="true">
-        	<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
-			<form-login/>
-			<access-denied-handler error-page="/accessError"/>
+        	
+        	<intercept-url pattern="/" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+        	<intercept-url pattern="/user/loginPage" access="permitAll"/>
+			<form-login login-page="/user/loginPage"/>
+				
         	<csrf/>
+        	<access-denied-handler ref="accessDeniedHandler" />
         </http>
         
         <authentication-manager>
@@ -22,5 +28,7 @@
                 </user-service>
             </authentication-provider>
         </authentication-manager>
+    
+    
     
 </beans:beans>

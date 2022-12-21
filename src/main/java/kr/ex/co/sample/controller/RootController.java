@@ -19,7 +19,7 @@ public class RootController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RootController.class);
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping("/")
 	public ModelAndView Home(HttpServletRequest req) {
 		logger.info("===============================================");
 		logger.info("URI :" + req.getRequestURI());
@@ -33,4 +33,6 @@ public class RootController {
 		
 		model.addAttribute("msg", "Access Denied");
 	}
+	
+	
 }
