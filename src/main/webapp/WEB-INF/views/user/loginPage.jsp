@@ -61,9 +61,11 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="/" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        
+<!--                                         <a href="/" class="btn btn-primary btn-user btn-block"> -->
+<!--                                             Login -->
+<!--                                         </a> -->
+                                        <input type="submit" value="Login">
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google

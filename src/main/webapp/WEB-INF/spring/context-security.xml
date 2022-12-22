@@ -10,11 +10,16 @@
                                  
         <beans:bean id="accessDeniedHandler" class="kr.ex.co.sample.security.AccessDeniedHandler" />
         
+        <beans:bean id="loginSuccessHandler" class="kr.ex.co.sample.security.LoginSuccessHandler" />
+        
         <http auto-config="true" use-expressions="true">
         	
         	<intercept-url pattern="/" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
         	<intercept-url pattern="/user/loginPage" access="permitAll"/>
-			<form-login login-page="/user/loginPage"/>
+			<form-login login-page="/user/loginPage"
+						username-parameter="userId"
+						password-parameter="userPw" 
+						authentication-success-handler-ref="loginSuccessHandler"/>
 				
         	<csrf/>
         	<access-denied-handler ref="accessDeniedHandler" />
