@@ -23,8 +23,6 @@
 </head>
 
 <body class="bg-gradient-primary">
-	<h2><c:out value="${error}" /></h2>
-	<h2><c:out value="${logout}" /></h2>
     <div class="container">
 
         <!-- Outer Row -->
@@ -65,7 +63,7 @@
 <!--                                         <a href="/" class="btn btn-primary btn-user btn-block"> -->
 <!--                                             Login -->
 <!--                                         </a> -->
-                                        <input type="submit" value="Login">
+                                        <input class="btn btn-primary btn-user btn-block" type="submit" value="Login">
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google

@@ -7,10 +7,12 @@
                                  http://www.springframework.org/schema/security
                                  http://www.springframework.org/schema/security/spring-security.xsd">
                                  
-                                 
+		<!--    AccessDeniedHandler 설정                     -->
         <beans:bean id="accessDeniedHandler" class="kr.ex.co.sample.security.AccessDeniedHandler" />
-        
+		<!--    LoginSuccessHandler 설정 			 -->
         <beans:bean id="loginSuccessHandler" class="kr.ex.co.sample.security.LoginSuccessHandler" />
+		<!--    LogoutSuccessHandler 설정 		 -->
+		<beans:bean id="logoutSuccessHandler" class="kr.ex.co.sample.security.LogoutSuccessHandler" />
         
         <http auto-config="true" use-expressions="true">
         	
@@ -20,17 +22,19 @@
 						username-parameter="userId"
 						password-parameter="userPw" 
 						authentication-success-handler-ref="loginSuccessHandler"/>
-				
+			<logout logout-url="/user/logout" invalidate-session="true" success-handler-ref="logoutSuccessHandler"/>
         	<csrf/>
         	<access-denied-handler ref="accessDeniedHandler" />
         </http>
         
         <authentication-manager>
             <authentication-provider>
-                <user-service>
-                    <user name="user" password="1111" authorities="ROLE_USER"/>
-                    <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-                </user-service>
+            	<jdbc-user-service data-source-ref="dataSource"/>
+            
+<!--                 <user-service> -->
+<!--                     <user name="user" password="1111" authorities="ROLE_USER"/> -->
+<!--                     <user name="admin" password="admin" authorities="ROLE_ADMIN"/> -->
+<!--                 </user-service> -->
             </authentication-provider>
         </authentication-manager>
     
