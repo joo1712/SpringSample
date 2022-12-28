@@ -33,6 +33,4 @@ public class RootController {
 		
 		model.addAttribute("msg", "Access Denied");
 	}
-	
-	
 }

@@ -8,9 +8,19 @@
 	<!-- ORACLE JDBC CONECTION 	-->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XEPDB1" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1" />
 		<property name="username" value="SMP_MAIN"/>
 		<property name="password" value="smpMain"/>
 	</bean>
-
+	
+	<bean id="dataSource2" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref="dataSource" />
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE" />
+				<property name="sqlPrefix" value="SQL         :  "/>
+			</bean>
+		</property>
+	</bean>
+	
 </beans>
